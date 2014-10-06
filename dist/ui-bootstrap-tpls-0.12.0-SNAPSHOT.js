@@ -2,7 +2,7 @@
  * angular-ui-bootstrap
  * http://angular-ui.github.io/bootstrap/
 
- * Version: 0.12.0-SNAPSHOT - 2014-10-03
+ * Version: 0.12.0-SNAPSHOT - 2014-10-06
  * License: MIT
  */
 angular.module("ui.bootstrap", ["ui.bootstrap.tpls", "ui.bootstrap.transition","ui.bootstrap.collapse","ui.bootstrap.accordion","ui.bootstrap.alert","ui.bootstrap.bindHtml","ui.bootstrap.buttons","ui.bootstrap.carousel","ui.bootstrap.dateparser","ui.bootstrap.position","ui.bootstrap.datepicker","ui.bootstrap.dropdown","ui.bootstrap.modal","ui.bootstrap.pagination","ui.bootstrap.tooltip","ui.bootstrap.popover","ui.bootstrap.progressbar","ui.bootstrap.rating","ui.bootstrap.tabs","ui.bootstrap.timepicker","ui.bootstrap.typeahead"]);
@@ -1479,10 +1479,10 @@ function ($compile, $parse, $document, $position, dateFilter, dateParser, datepi
         datepickerEl.attr('date-disabled', 'dateDisabled({ date: date, mode: mode })');
       }
       
-      //if (attrs.initDate) {
-        //scope.initDate = scope.$parent.$eval(attrs.initDate);
-        //datepickerEl.attr('init-date', 'initDate');
-      //}
+      if (attrs.initDate) {
+        scope.initDate = scope.$parent.$eval(attrs.initDate);
+        datepickerEl.attr('init-date', 'initDate');
+      }
 
       function parseDate(viewValue) {
         if (!viewValue) {

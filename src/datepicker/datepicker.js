@@ -501,10 +501,10 @@ function ($compile, $parse, $document, $position, dateFilter, dateParser, datepi
         datepickerEl.attr('date-disabled', 'dateDisabled({ date: date, mode: mode })');
       }
       
-      //if (attrs.initDate) {
-        //scope.initDate = scope.$parent.$eval(attrs.initDate);
-        //datepickerEl.attr('init-date', 'initDate');
-      //}
+      if (attrs.initDate) {
+        scope.initDate = scope.$parent.$eval(attrs.initDate);
+        datepickerEl.attr('init-date', 'initDate');
+      }
 
       function parseDate(viewValue) {
         if (!viewValue) {
